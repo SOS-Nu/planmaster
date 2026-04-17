@@ -1,0 +1,67 @@
+{
+  "DocEntry": 0,
+  "DocNum": 0,
+  "DocDate": "2026-04-16T00:00:00",
+  "DocDueDate": "2026-04-16T00:00:00",
+  "CardCode": "100",
+  "CardName": "STC",
+  "U_PhoneNo": "123",
+  "U_sales_emp": "123",
+  "U_NOTE": "11/11",
+  "DocTotal": 0.0,
+  "BPL_IDAssignedToInvoice": 1,
+  "Lines": [
+    {
+      "LineNum": 0,
+      "VisOrder": 0,
+      "ItemCode": "0987",
+      "ItemDescription": "0987",
+      "Quantity": 1.0,
+      "Price": 0.0,
+      "UoMCode": "Manual",
+      "WarehouseCode": null,
+      "U_reason": "",
+      "U_CTKM": "",
+      "U_Note": ""
+    },
+    {
+      "LineNum": 2,
+      "VisOrder": 2,
+      "ItemCode": "A00005",
+      "ItemDescription": "Rainbow Color Printer 7.5",
+      "Quantity": 1.0,
+      "Price": 500.0,
+      "UoMCode": "Manual",
+      "WarehouseCode": null,
+      "U_reason": "",
+      "U_CTKM": "",
+      "U_Note": ""
+    },
+    {
+      "LineNum": null,
+      "VisOrder": null,
+      "ItemCode": "A00003",
+      "ItemDescription": "J.B. Officeprint 1186",
+      "Quantity": 1.0,
+      "Price": 375.0,
+      "UoMCode": "",
+      "WarehouseCode": null,
+      "U_reason": "",
+      "U_CTKM": "",
+      "U_Note": ""
+    },
+    {
+      "LineNum": 3,
+      "VisOrder": 3,
+      "ItemCode": "A00006",
+      "ItemDescription": "Rainbow 1200 Laser Series",
+      "Quantity": 1.0,
+      "Price": 500.0,
+      "UoMCode": "Manual",
+      "WarehouseCode": null,
+      "U_reason": "",
+      "U_CTKM": "",
+      "U_Note": ""
+    }
+  ]
+}

@@ -269,11 +269,34 @@ public class Dog : Animal
 }
 ```
 
+Nó có phải là final bên Java không?
+Về mặt hiệu quả sử dụng (Effect): CÓ, nó tương đương với final. Lớp con không thể ghi đè logic của nó theo cách đa hình thông thường.
+
+Tuy nhiên, về mặt kỹ thuật (Technical), có một sự khác biệt thú vị gọi là Hiding (Che giấu):
+
+Trong Java, nếu một hàm là final, lớp con không thể khai báo một hàm trùng tên, trùng tham số. Trình biên dịch sẽ báo lỗi "cannot override the final method".
+
+Trong C#, dù hàm cha không có virtual, lớp con vẫn có thể tạo một hàm y hệt bằng cách dùng từ khóa new. Đây gọi là Method Hiding.
+
+```csharp
+public class Parent {
+public void Show() => Console.WriteLine("Parent");
+}
+
+public class Child : Parent {
+public new void Show() => Console.WriteLine("Child"); // Không lỗi, nhưng là hàm hoàn toàn mới
+}
+Child child = new Child();
+child.Show();
+```
+
+Lưu ý chuyên gia: Trong Clean Architecture, việc dùng new để hide method bị coi là Bad Practice vì nó gây nhầm lẫn về tính đa hình. Nếu bạn muốn ngăn chặn kế thừa một cách chuyên nghiệp nhất trong C#, bạn nên dùng từ khóa `sealed` cho Class.
+
 ---
 
 # 9) Override là gì?
 
-`override` là khi class con **viết lại** hàm `virtual` hoặc `abstract` của cha.
+`override` là khi class con viết lại hàm `virtual` hoặc `abstract` của cha.
 
 Ví dụ:
 
@@ -293,6 +316,9 @@ public class Bird : Animal
         Console.WriteLine("Bird flies");
     }
 }
+
+Bird bird = new Bird();
+bird.Move();
 ```
 
 ---
@@ -362,11 +388,10 @@ public abstract class Animal
         Console.WriteLine(Name + " is moving");
     }
 }
-```
 
-Class con:
 
-```csharp
+//Class con:
+
 public class Dog : Animal
 {
     public override void Speak()
@@ -379,9 +404,6 @@ public class Dog : Animal
         Console.WriteLine(Name + " runs");
     }
 }
-```
-
-```csharp
 public class Fish : Animal
 {
     public override void Speak()
@@ -394,16 +416,11 @@ public class Fish : Animal
         Console.WriteLine(Name + " swims");
     }
 }
-```
-
-Dùng:
-
-```csharp
 Dog dog = new Dog();
 dog.Name = "Lucky";
-dog.Sleep();   // kế thừa từ cha
-dog.Speak();   // override
-dog.Move();    // override
+dog.Sleep();
+dog.Speak();
+dog.Move();
 ```
 
 ---
@@ -545,6 +562,17 @@ public class Tester : Employee
         Console.WriteLine(Name + " tests software");
     }
 }
+Developer dev = new Developer();
+dev.Name = "John";
+dev.CheckIn();
+dev.Work();
+dev.Report();
+Tester tester = new Tester();
+tester.Name = "Jane";
+tester.CheckIn();
+tester.Work();
+tester.Report();
+
 ```
 
 Giải thích:

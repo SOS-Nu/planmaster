@@ -727,3 +727,6 @@ Trong SAP HANA:
 ---
 
 Nếu muốn, lượt tiếp theo mình sẽ làm cho bạn một bộ **cheat sheet SAP HANA SQL nâng cao 1 trang**, gồm đúng các mẫu query hay dùng nhất để bạn dán vào dự án luôn.
+
+ngiên cứu
+dynamic SQL
